@@ -23,10 +23,10 @@ class Card extends Component {
     } 
   }
   render() {
-    let display = this.state.hasFlipped ? this.props.def : this.props.word
+    let display = this.state.hasFlipped ? (<div><p>{this.props.def}</p>{this.props.sol}</div>) : this.props.word
     return (
       <div className="card-container" onClick={this._flipCard}>
-        <p>{display}</p>
+        {display}
       </div>
     );
   }

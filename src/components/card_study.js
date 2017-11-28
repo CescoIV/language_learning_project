@@ -7,10 +7,10 @@ import axios from 'axios';
 class CardStudy extends Component {
   constructor(props){
     super(props);
-    this.data = null;
     this.state = {
       lang: this.props.lang,
       display: null,
+      data: [],
       langs: {
         nahuatl: {
           words: [
@@ -64,36 +64,44 @@ class CardStudy extends Component {
     }
     this._flashCards = this._flashCards.bind(this);
     this._quizGenerator = this._quizGenerator.bind(this);
+    this._getData - this._getData.bind(this);
   }
 
   _flashCards(){
-    this._getData();
     let lang = this.state.langs[this.state.lang];
     console.log(lang);
+    console.log(this.state.data)
     let cards = lang.words.map((obj,idx) => (<Card word={obj.word} def={obj.definition} key={idx}/>));
+    let dataCards = this.state.data.map((obj,idx) =>(<Card word={obj.word_native} def={obj.word_english} sol={obj.correct_responses} key={idx}/>));
     this.setState({
-      display: cards
+      display: dataCards
     })
   }
   _quizGenerator(){
     let lang = this.state.langs[this.state.lang];
 
     let myQuiz = (<Quiz lang={lang}/>);
+    let myDataQuiz = (<Quiz lang={this.state.data}/>)
     this.setState({
-      display: myQuiz
+      display: myDataQuiz
     })
   }
   _getData(){
     let cors = 'https://cors-anywhere.herokuapp.com/';
     axios.get(cors+'https://nahuatl-api.herokuapp.com/language/nahuatl/words')
-    .then((response)=>{
+    .then((response) =>{
       this.data = response.data;
       console.log(response.data);
-      this.data
+      this.setState({
+        data: response.data
+      })
     })
-    .catch((error)=>{
+    .catch((error) =>{
       console.log(error);
     })
+  }
+  componentWillMount(){
+    this._getData();
   }
   render() {                      
     return (
