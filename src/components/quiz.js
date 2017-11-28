@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QuizCard from './quizcard.js';
+import Stats from './stats.js';
 import axios from 'axios';
 
 class Quiz extends Component {
@@ -8,33 +9,37 @@ class Quiz extends Component {
     this.state={
       knownWords:[],
       display: null,
+      statsDisplay: null,
       correct: 0
     }
     this._pickFive = this._pickFive.bind(this);
     this._count = this._count.bind(this);
     this._loadData= this._loadData.bind(this);
+    this._toggleStats = this._toggleStats.bind(this);
   }
   _pickFive(){
-    console.log('hi im pick5');
+    console.log('hi im pick5');;
+    //shuffle every word in the dictionary
     let words = this.props.lang;
-    //shuffle
-    for(let i in words){
-      //get rndom index in word arr
-      let idx = Math.floor(Math.random()*words.length);
-      // console.log(i);
-      // console.log(words[idx]);
-      [words[i],words[idx]]=[words[idx],words[i]];
-    }
+    words = this._shuffle(words);
     //pick first 5 from shuffled array
     let five = words.slice(0,5);
-    console.log(five);
     //create quizcard components
     five = five.map((obj,idx) => (<QuizCard word={obj.word_native} def={obj.word_english} key={idx} count={this._count} sol={obj.correct_responses}/>));
     console.log(five);
     this.setState({
       display: five
     })
-
+  }
+  _shuffle(words){
+    console.log(words, "preshuffle");
+    for(let i in words){
+      //get rndom index in word arr
+      let idx = Math.floor(Math.random()*words.length);
+      [words[i],words[idx]]=[words[idx],words[i]];
+    }
+    console.log(words,'postshuffle');
+    return words;
   }
   _count(){
     this.setState({
@@ -45,25 +50,42 @@ class Quiz extends Component {
     let cors = 'https://cors-anywhere.herokuapp.com/';
     axios.get(cors+'https://nahuatl-api.herokuapp.com/users/fordaz')
     .then((response) =>{
-      console.log(response.data.knownWords);
+      // console.log("I just made the axios call, hereis the response:",response.data.knownWords);
       this.setState({
-        
+        knownWords: response.data.knownWords
       })
       
+      this._pickFive();
     })
     .catch((error) =>{
       console.log(error);
     })
-  }
 
+    // console.log('im inside load data', this.state.knownWords);
+  }
+  _toggleStats(e){
+    e.preventDefault();
+    if(this.state.statsDisplay){
+      this.setState({
+        statsDisplay:null
+      })
+    }else{
+      this.setState({
+        statsDisplay: (<Stats known={this.state.knownWords}/>)
+      })
+    }
+
+  }
   componentWillMount(){
     this._loadData();
-    this._pickFive();
   }
   render() {                      
     return (
       <div className="App">
-        <p>hello im quiz</p>
+        <div className="show-known">
+          <button onClick={this._toggleStats}>Show me my known words</button>
+          {this.state.statsDisplay}
+        </div>
         <p>{this.state.correct}/5 correct</p>
         {this.state.display}
       </div>
