@@ -78,9 +78,6 @@ class CardStudy extends Component {
     })
   }
   _quizGenerator(){
-    let lang = this.state.langs[this.state.lang];
-
-    let myQuiz = (<Quiz lang={lang}/>);
     let myDataQuiz = (<Quiz lang={this.state.data}/>)
     this.setState({
       display: myDataQuiz
@@ -90,8 +87,6 @@ class CardStudy extends Component {
     let cors = 'https://cors-anywhere.herokuapp.com/';
     axios.get(cors+'https://nahuatl-api.herokuapp.com/language/nahuatl/words')
     .then((response) =>{
-      this.data = response.data;
-      console.log(response.data);
       this.setState({
         data: response.data
       })

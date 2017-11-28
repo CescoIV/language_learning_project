@@ -11,8 +11,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.buttons =  [
-        (<button className='lang_btn' onClick={(e)=> this._generateStudy(e,'nahuatl')}>Nahuatl</button>),
-        (<button className='lang_btn' onClick={(e)=> this._generateStudy(e,'german')}>German</button>)
+        (<button className='lang_btn' onClick={(e) => this._generateStudy(e,'nahuatl')}>Nahuatl</button>),
+        (<button className='lang_btn' onClick={(e) => this._generateStudy(e,'german')}>German</button>)
         ]
     this.state = {
       buttons:this.buttons,
