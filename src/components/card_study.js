@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import Card from './card.js';
 import LangButton from './lang_buttons.js';
 import Quiz from './quiz.js';
+import axios from 'axios';
 
 class CardStudy extends Component {
   constructor(props){
     super(props);
+    this.data = null;
     this.state = {
       lang: this.props.lang,
       display: null,
@@ -65,6 +67,7 @@ class CardStudy extends Component {
   }
 
   _flashCards(){
+    this._getData();
     let lang = this.state.langs[this.state.lang];
     console.log(lang);
     let cards = lang.words.map((obj,idx) => (<Card word={obj.word} def={obj.definition} key={idx}/>));
@@ -78,6 +81,18 @@ class CardStudy extends Component {
     let myQuiz = (<Quiz lang={lang}/>);
     this.setState({
       display: myQuiz
+    })
+  }
+  _getData(){
+    let cors = 'https://cors-anywhere.herokuapp.com/';
+    axios.get(cors+'https://nahuatl-api.herokuapp.com/language/nahuatl/words')
+    .then((response)=>{
+      this.data = response.data;
+      console.log(response.data);
+      this.data
+    })
+    .catch((error)=>{
+      console.log(error);
     })
   }
   render() {                      
