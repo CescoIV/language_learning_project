@@ -20,7 +20,8 @@ class QuizCard extends Component {
     e.preventDefault();
     console.log(this.state.value, 'i submitted');
     //check if the definition fits exactly, or if it fits one of the accepted responses
-    if(this.state.value === this.props.def || this.props.sol.includes(this.state.value)){
+    let val = this.state.value.toLowerCase();
+    if(val === this.props.def || this.props.sol.includes(val)){
       this.setState({
         solved: 'Correct',
         submitted: true
@@ -49,7 +50,6 @@ class QuizCard extends Component {
     let form  = this.state.submitted ? (
       <div>
         <p>{this.state.solved}</p>
-        <p>{this.props.def}</p>
       </div>
       ):(
         <form onSubmit={this._checkAccuracy}>
@@ -58,9 +58,7 @@ class QuizCard extends Component {
       )                    
     return (
       <div className="App">
-        <p>hello im quizcard</p>
-        <p>{this.props.word}</p>
-        {form}
+        {this.props.word}{form}
       </div>
     );
   }

@@ -20,13 +20,26 @@ class CardStudy extends Component {
   _flashCards(){
     console.log(this.state.data)
     let dataCards = this.state.data.map((obj,idx) =>(<Card word={obj.word_native} def={obj.word_english} sol={obj.correct_responses} key={idx}/>));
+    dataCards = this._shuffle(dataCards).slice(0,5);
     this.setState({
+      message: (<p className='read'>Take your time to study some words, five are selected at random each time:</p>),
       display: dataCards
     })
+  }
+  _shuffle(words){
+    console.log(words, "preshuffle");
+    for(let i in words){
+      //get rndom index in word arr
+      let idx = Math.floor(Math.random()*words.length);
+      [words[i],words[idx]]=[words[idx],words[i]];
+    }
+    console.log(words,'postshuffle');
+    return words;
   }
   _quizGenerator(){
     let myDataQuiz = (<Quiz lang={this.state.data}/>)
     this.setState({
+      message:null,
       display: myDataQuiz
     })
   }
@@ -54,8 +67,7 @@ class CardStudy extends Component {
             <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button q'>Q</p></div>
           </nav>
         </div>
-        <p>hello</p>
-        <div className='display'>{this.state.display}</div>
+        <div className='display'>{this.state.message}{this.state.display}</div>
 
       </div>
     );

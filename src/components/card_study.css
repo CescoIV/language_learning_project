@@ -1,11 +1,17 @@
 p{
 	color:black;
+	margin-top: 0px;
+}
+.read{
+	color: white;
+	background-color: rgba(0,0,0,.5);
 }
 .nav_bar_bg{
 	position:fixed;
 	width:150px;
 	height:600px;
 	background-color: red;
+	background-image: url("https://thumb1.shutterstock.com/display_pic_with_lo-collection-grill-bar-design-vector-illustration-732393130.jpg");
 }
 .nav_bar{
 	position: fixed;
@@ -28,5 +34,4 @@ p{
 .display{
 	margin: 0 35%;
 	width: 600px;
-	background-color: red;
 }

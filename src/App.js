@@ -43,6 +43,10 @@ class App extends Component {
                                      
     return (
       <div className="App">
+        <header>
+          <p>Nahuatl Project</p>
+          <img src="http://docfilm.com/site/wp-content/uploads/2014/12/olin-vector.png" alt='logo'/>
+        </header>
         <div className='bottom'>
           {this.state.display}
           {this.state.buttons}
