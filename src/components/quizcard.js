@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './quiz.css';
 
 class QuizCard extends Component {
   constructor(props){
@@ -58,7 +59,7 @@ class QuizCard extends Component {
       )                    
     return (
       <div className="App">
-        {this.props.word}{form}
+        <p className='word'>{this.props.word}</p>{form}
       </div>
     );
   }

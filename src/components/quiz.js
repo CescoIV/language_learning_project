@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import QuizCard from './quizcard.js';
 import Stats from './stats.js';
 import axios from 'axios';
+import './quiz.css';
 
 class Quiz extends Component {
   constructor(props){
@@ -84,7 +85,7 @@ class Quiz extends Component {
       })
     }else{
       this.setState({
-        statsDisplay: (<Stats known={this.state.knownWords}/>)
+        statsDisplay: (<Stats className='statbox' known={this.state.knownWords}/>)
       })
     }
 
@@ -105,12 +106,14 @@ class Quiz extends Component {
             this page.
           </p>
         </div>
-        <div className="show-known">
-          <button onClick={this._toggleStats}>Show me my known words</button>
-          {this.state.statsDisplay}
-        </div>
         <p>{this.state.correct}/5 correct</p>
         {this.state.display}
+        <div className="show-known">
+          <button onClick={this._toggleStats}>Show me my known words</button>
+          <div className=''>
+            {this.state.statsDisplay}
+          </div>
+        </div>
       </div>
     );
   }

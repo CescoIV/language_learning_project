@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-
+import './quiz.css';
 
 class Stats extends Component {
   render() {  
-    let string = ''
+    let pstyle={
+      color: '#fff',
+      fontWeight: 'bold',
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      margin:'0px',
+    }
+    let string = [];
     for(let word of this.props.known ){
       word = word.toLowerCase();
-      string += word + ' ';
+      word += ' ';
+      string.push((<p style={pstyle}>{word}</p>)); 
     }                   
     return (
       <div className="App">
-        {string}
+        <p>{string}</p>
       </div>
     );
   }

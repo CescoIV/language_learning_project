@@ -1,0 +1,16 @@
+form{
+	margin:0px;
+}
+.word{
+	margin: 10px;
+}
+.show-known{
+	margin-top:40px;
+}
+.statbox p{
+	color:red;
+}
+.statbox{
+	background-color: grey;
+	height: 400px;
+}
