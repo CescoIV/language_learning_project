@@ -1,17 +1,22 @@
 p{
 	color:black;
-	margin-top: 0px;
 }
 .read{
-	color: white;
 	background-color: rgba(0,0,0,.5);
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+}
+.read p,h1{
+	color:white;
 }
 .nav_bar_bg{
 	position:fixed;
 	width:150px;
 	height:600px;
 	background-color: red;
-	background-image: url("https://thumb1.shutterstock.com/display_pic_with_lo-collection-grill-bar-design-vector-illustration-732393130.jpg");
+	background-image: url("https://thumb1.shutterstock.com/display_pic_with_logo/4192141/732393130/stock-vector-grilled-meat-and-vegetables-vertical-banner-collection-grill-bar-design-vector-illustration-732393130.jpg");
 }
 .nav_bar{
 	position: fixed;

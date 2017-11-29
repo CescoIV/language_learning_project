@@ -8,13 +8,22 @@ header{
 header p{
   display: inline;
 }
+h1{
+  margin-top:0px;
+  padding-top: 20px;
+}
+.bottom{
+  height:900px;
+}
 img{
   width: 100px;
   height:100px;
   display: inline;
 }
 .App {
+  height: 100%;
   text-align: center;
-  background-color: red;
+  background-attachment: fixed;
+  background-image: url('https://previews.123rf.com/images/kristina0702/kristina07021410/kristina0702141000024/33096414-Sfondo-orizzontale-in-stile-azteco-dio-Quetzalcoatl-e-uccelli-terza-variante-Archivio-Fotografico.jpg');
   background-size: cover;
 }

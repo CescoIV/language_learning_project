@@ -18,7 +18,6 @@ class App extends Component {
   _generateStudy(e,str){
     e.preventDefault();
     console.log('tryna change lang',str);
-
     this.setState({
       display: (
         <div>
@@ -26,16 +25,12 @@ class App extends Component {
         </div>
         ),
       buttons: null,
-
     })
-    console.log(this.state.display, 'i just set the state');
-    console.log(this.button);
-
   }
   something(e){
     e.preventDefault();
     this.setState({
-      display:null,
+      display:(<p>choose your options</p>),
       buttons:(<button className='lang_btn' onClick={(e) => this._generateStudy(e,'nahuatl')}>Nahuatl</button>),
     })
   }

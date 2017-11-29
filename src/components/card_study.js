@@ -22,7 +22,7 @@ class CardStudy extends Component {
     let dataCards = this.state.data.map((obj,idx) =>(<Card word={obj.word_native} def={obj.word_english} sol={obj.correct_responses} key={idx}/>));
     dataCards = this._shuffle(dataCards).slice(0,5);
     this.setState({
-      message: (<p className='read'>Take your time to study some words, five are selected at random each time:</p>),
+      message: (<div className='read'><h1>Study Time!</h1><p>Take your time to study some words, five are selected at random each time:</p></div>),
       display: dataCards
     })
   }
@@ -50,6 +50,7 @@ class CardStudy extends Component {
       this.setState({
         data: response.data
       })
+      this._flashCards();
     })
     .catch((error) =>{
       console.log(error);

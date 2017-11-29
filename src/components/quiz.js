@@ -95,14 +95,16 @@ class Quiz extends Component {
   render() {                      
     return (
       <div className="App">
-        <h1>Take a quiz:</h1>
-        <p>
-          Here you can test the knowledge you may have learned
-          while studying under the flash card study section. Below
-          we display a word in Nahuatl for you and provide you with 
-          an input form. A new quiz will be rendered everytime you visit
-          this page.
-        </p>
+        <div className='read'>
+          <h1>Take a quiz:</h1>
+          <p>
+            Here you can test the knowledge you may have learned
+            while studying under the flash card study section. Below
+            we display a word in Nahuatl for you and provide you with 
+            an input form. A new quiz will be rendered everytime you visit
+            this page.
+          </p>
+        </div>
         <div className="show-known">
           <button onClick={this._toggleStats}>Show me my known words</button>
           {this.state.statsDisplay}
