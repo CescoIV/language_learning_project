@@ -9,7 +9,7 @@ class App extends Component {
     this.initate = 
     this.state = {
       buttons:(<button className='lang_btn' onClick={(e) => this._generateStudy(e,'nahuatl')}>Teach me Nahuatl!</button>),
-      display: (<div><h1>Welcome to the Nahuatl project!</h1>
+      display: (<div><h2>Welcome to the Nahuatl project!</h2>
           <h3>Ready to get started?</h3></div>)
     }
     this._generateStudy = this._generateStudy.bind(this);
