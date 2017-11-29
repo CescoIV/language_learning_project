@@ -65,6 +65,19 @@ class Quiz extends Component {
   }
   _toggleStats(e){
     e.preventDefault();
+    //update known words
+    let cors = 'https://cors-anywhere.herokuapp.com/';
+    axios.get(cors+'https://nahuatl-api.herokuapp.com/users/fordaz')
+    .then((response) =>{
+      this.setState({
+        knownWords: response.data.knownWords
+      })
+      
+    })
+    .catch((error) =>{
+      console.log(error);
+    })
+
     if(this.state.statsDisplay){
       this.setState({
         statsDisplay:null

@@ -1,0 +1,19 @@
+p{
+	color:red;
+}
+.nav_bar{
+	width:500px;
+	height:500px;
+	background-color: #000;
+}
+.nav_button{
+	margin: 40px;
+	font-size: 30px;
+}
+.nav_button:hover{
+	margin: 35px;
+	font-size:35px;
+}
+.s:hover{
+	color:blue;
+}

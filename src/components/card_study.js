@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from './card.js';
 import Quiz from './quiz.js';
 import axios from 'axios';
+import './card_study.css';
 
 class CardStudy extends Component {
   constructor(props){
@@ -48,10 +49,12 @@ class CardStudy extends Component {
     return (
       <div className="App">
         <nav className='nav_bar'>
-          <button onClick={this._flashCards}>Study Flash Cards!</button>
-          <button onClick={this._quizGenerator}>Quiz Me!</button>
+          <div onClick={this._flashCards}><p title="study flash cards"className='nav_button s'>S</p></div>
+          <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button q'>Q</p></div>
         </nav>
+        <p>hello</p>
         <div>{this.state.display}</div>
+
       </div>
     );
   }
