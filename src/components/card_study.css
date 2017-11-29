@@ -11,6 +11,9 @@ p{
 .read p,h1{
 	color:white;
 }
+.btn-spn{
+	font-size: 10px;
+}
 .nav_bar_bg{
 	position:fixed;
 	width:150px;
@@ -26,15 +29,14 @@ p{
 	background-color: #ff4;
 }
 .nav_button{
+	color:black;
+	transition: color .2s linear;
 	margin: 40px;
 	font-size: 30px;
 }
 .nav_button:hover{
-	margin: 35px;
-	font-size:35px;
-}
-.s:hover{
-	color:blue;
+	color:red;
+	animation: changeColor;
 }
 .display{
 	margin: 0 35%;

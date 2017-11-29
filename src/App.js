@@ -6,18 +6,14 @@ class App extends Component {
 
   constructor(props){
     super(props);
-    this.initate = 
     this.state = {
       buttons:(<button className='lang_btn' onClick={(e) => this._generateStudy(e,'nahuatl')}>Teach me Nahuatl!</button>),
-      display: (<div><h2>Welcome to the Nahuatl project!</h2>
-          <h3>Ready to get started?</h3></div>)
+      display: (<div><h2>Welcome to the Nahuatl project!</h2><h3>Ready to get started?</h3></div>)
     }
     this._generateStudy = this._generateStudy.bind(this);
-    this.something = this.something.bind(this);
   }
   _generateStudy(e,str){
     e.preventDefault();
-    console.log('tryna change lang',str);
     this.setState({
       display: (
         <div>
@@ -27,13 +23,6 @@ class App extends Component {
       buttons: null,
     })
   }
-  something(e){
-    e.preventDefault();
-    this.setState({
-      display:(<p>choose your options</p>),
-      buttons:(<button className='lang_btn' onClick={(e) => this._generateStudy(e,'nahuatl')}>Nahuatl</button>),
-    })
-  }
   render() {
                                      
     return (
@@ -41,6 +30,8 @@ class App extends Component {
         <header>
           <p>Nahuatl Project</p>
           <img src="http://docfilm.com/site/wp-content/uploads/2014/12/olin-vector.png" alt='logo'/>
+          <span className='hed'>Created By: Francisco Ordaz IV</span>
+          <a href='https://www.github.com/CescoIV'><img src='https://image.flaticon.com/icons/svg/25/25231.svg'/></a>
         </header>
         <div className='bottom'>
           {this.state.display}

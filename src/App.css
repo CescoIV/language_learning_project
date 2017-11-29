@@ -2,7 +2,7 @@ header{
   font-size: 45px;
   text-align: left;
   font-weight: bold;
-  height: 200px;
+  height: 160px;
   background-color: grey;
 }
 header p{
@@ -12,13 +12,18 @@ h1{
   margin-top:0px;
   padding-top: 20px;
 }
-.bottom{
-  height: 900px;
-}
 img{
   width: 100px;
   height:100px;
   display: inline;
+}
+.hed{
+  font-size: 25px;
+  text-align: right;
+  margin-left: 45%;
+}
+.bottom{
+  height: 900px;
 }
 .App {
   height: 100%;

@@ -9,7 +9,6 @@ class CardStudy extends Component {
   constructor(props){
     super(props);
     this.state = {
-      lang: this.props.lang,
       display: null,
       data: [],
     }
@@ -19,8 +18,9 @@ class CardStudy extends Component {
     this._searchComp = this._searchComp.bind(this);
   }
 
+  //COMPONENTS
   _flashCards(){
-    console.log(this.state.data)
+    //create flash card
     let dataCards = this.state.data.map((obj,idx) =>(<Card word={obj.word_native} def={obj.word_english} sol={obj.correct_responses} key={idx}/>));
     dataCards = this._shuffle(dataCards).slice(0,5);
     this.setState({
@@ -28,12 +28,27 @@ class CardStudy extends Component {
       display: dataCards
     })
   }
-  _searchComp(){
+  _quizGenerator(){
+    let myDataQuiz = (<Quiz lang={this.state.data}/>)
     this.setState({
-      message:(<div className='read'><h1>Search for a word!</h1></div>),
+      message:null,
+      display: myDataQuiz
+    })
+  } 
+  _searchComp(){
+    //create search view
+    let message = (
+      <div className='read'>
+        <h1>Search for a word!</h1><p>Type in a word in either English or Nahuatl, we will search our API for something that matches, please check your spelling!</p>
+      </div>);
+
+    this.setState({
+      message: message,
       display: (<Search data={this.state.data}/>),
     })
   }
+  //-------------
+  //UTILITY
   _shuffle(words){
     console.log(words, "preshuffle");
     for(let i in words){
@@ -44,13 +59,7 @@ class CardStudy extends Component {
     console.log(words,'postshuffle');
     return words;
   }
-  _quizGenerator(){
-    let myDataQuiz = (<Quiz lang={this.state.data}/>)
-    this.setState({
-      message:null,
-      display: myDataQuiz
-    })
-  }
+
   _getData(){
     let cors = 'https://cors-anywhere.herokuapp.com/';
     axios.get(cors+'https://nahuatl-api.herokuapp.com/language/nahuatl/words')
@@ -72,9 +81,9 @@ class CardStudy extends Component {
       <div className="App">
         <div className="nav_bar_bg">
           <nav className='nav_bar'>
-            <div onClick={this._flashCards}><p title="study flash cards"className='nav_button s'>S</p></div>
-            <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button q'>Q</p></div>
-            <div onClick={this._searchComp}><p title='Search words'className='nav_button'>Se</p></div>
+            <div onClick={this._flashCards}><p title="study flash cards"className='nav_button s'>S<span className='btn-spn'>tudy</span></p></div>
+            <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button q'>Q<span className='btn-spn'>uiz</span></p></div>
+            <div onClick={this._searchComp}><p title='Search words'className='nav_button'>S<span className='btn-spn'>earch</span></p></div>
           </nav>
         </div>
         <div className='display'>{this.state.message}{this.state.display}</div>

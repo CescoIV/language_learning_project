@@ -58,8 +58,6 @@ class Search extends Component {
   render() {                      
     return (
       <div className="App">
-        <p>hello</p>
-        <p>Show all words? click moi</p>
         <form onSubmit={this._handleSearch}>
           <span>Search: </span><input onChange={this._updateQuery}type='text'></input>
         </form>
