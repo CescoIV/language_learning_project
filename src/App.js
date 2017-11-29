@@ -9,7 +9,8 @@ class App extends Component {
     this.initate = 
     this.state = {
       buttons:(<button className='lang_btn' onClick={(e) => this._generateStudy(e,'nahuatl')}>Teach me Nahuatl!</button>),
-      display: null
+      display: (<div><h1>Welcome to the Nahuatl project!</h1>
+          <h3>Ready to get started?</h3></div>)
     }
     this._generateStudy = this._generateStudy.bind(this);
     this.something = this.something.bind(this);
@@ -43,10 +44,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className='bottom'>
-          <h1>Welcome to the Nahuatl project!</h1>
-          <h3>Ready to get started?</h3>
-          {this.state.buttons}
           {this.state.display}
+          {this.state.buttons}
         </div>
       </div>
     );

@@ -48,12 +48,14 @@ class CardStudy extends Component {
   render() {                      
     return (
       <div className="App">
-        <nav className='nav_bar'>
-          <div onClick={this._flashCards}><p title="study flash cards"className='nav_button s'>S</p></div>
-          <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button q'>Q</p></div>
-        </nav>
+        <div className="nav_bar_bg">
+          <nav className='nav_bar'>
+            <div onClick={this._flashCards}><p title="study flash cards"className='nav_button s'>S</p></div>
+            <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button q'>Q</p></div>
+          </nav>
+        </div>
         <p>hello</p>
-        <div>{this.state.display}</div>
+        <div className='display'>{this.state.display}</div>
 
       </div>
     );

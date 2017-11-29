@@ -1,10 +1,18 @@
 p{
-	color:red;
+	color:black;
+}
+.nav_bar_bg{
+	position:fixed;
+	width:150px;
+	height:600px;
+	background-color: red;
 }
 .nav_bar{
-	width:500px;
+	position: fixed;
+	width:100px;
 	height:500px;
-	background-color: #000;
+	margin-top: 2.75%;
+	background-color: #ff4;
 }
 .nav_button{
 	margin: 40px;
@@ -16,4 +24,9 @@ p{
 }
 .s:hover{
 	color:blue;
+}
+.display{
+	margin: 0 35%;
+	width: 600px;
+	background-color: red;
 }

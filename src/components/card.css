@@ -1,6 +1,23 @@
+.card-background{
+	position: relative;
+	background-image: url('https://ulmhawkeyeonline.com/wp-content/uploads/2017/11/puppy-development-300x200.jpg');
+	background-size: cover;
+	height: 350px;
+}
 .card-container{
+	position: absolute;
+	margin-top: 4.25%;
+	margin-left: 7.5%;
 	width: 500px;
 	height: 300px;
 	border: 1px solid black;
 
+}
+.answer{
+	margin-top: 20%;
+}
+.word{
+	margin-top:10%;
+	font-weight: bold;
+	font-size: 20px;
 }
