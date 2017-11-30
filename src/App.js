@@ -28,10 +28,9 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <p>Nahuatl Project</p>
-          <img src="http://docfilm.com/site/wp-content/uploads/2014/12/olin-vector.png" alt='logo'/>
+          <img className='logo'src={require("./images/logo2.png")}/>
           <span className='hed'>Created By: Francisco Ordaz IV</span>
-          <a href='https://www.github.com/CescoIV'><img src='https://image.flaticon.com/icons/svg/25/25231.svg'/></a>
+          <a href='https://www.github.com/CescoIV'><img className='github' src='https://azurelens.net/assets/logos/Git%20repository.png'/></a>
         </header>
         <div className='bottom'>
           {this.state.display}

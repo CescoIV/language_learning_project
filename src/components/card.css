@@ -1,6 +1,7 @@
 .card-background{
 	position: relative;
-	background-image: url('https://ulmhawkeyeonline.com/wp-content/uploads/2017/11/puppy-development-300x200.jpg');
+	background-color:white;
+	background-image: url('../images/card.png');
 	background-size: cover;
 	height: 350px;
 }
@@ -10,14 +11,15 @@
 	margin-left: 7.5%;
 	width: 500px;
 	height: 300px;
-	border: 1px solid black;
-
+/*	border: 1px solid black;
+*/
 }
 .answer{
 	margin-top: 20%;
+	color: black;
 }
-.word{
-	margin-top:10%;
+p.word{
+	margin-top:40px;
 	font-weight: bold;
 	font-size: 20px;
 }

@@ -1,9 +1,12 @@
+body{
+  color: #fff;
+}
 header{
   font-size: 45px;
   text-align: left;
   font-weight: bold;
   height: 160px;
-  background-color: grey;
+  background-color: rgba(75,52,14,.5);
 }
 header p{
   display: inline;
@@ -17,10 +20,22 @@ img{
   height:100px;
   display: inline;
 }
+.logo{
+  margin-left: 30px;
+  width: 300px;
+  height: 150px;
+}
+.github{
+  margin-left: 30px;
+  width:50px;
+  height: 50px;
+}
 .hed{
+  color:#fff;
   font-size: 25px;
   text-align: right;
   margin-left: 45%;
+
 }
 .bottom{
   height: 900px;
@@ -29,6 +44,6 @@ img{
   height: 100%;
   text-align: center;
   background-attachment: fixed;
-  background-image: url('https://previews.123rf.com/images/kristina0702/kristina07021410/kristina0702141000024/33096414-Sfondo-orizzontale-in-stile-azteco-dio-Quetzalcoatl-e-uccelli-terza-variante-Archivio-Fotografico.jpg');
+  background-image: url('./images/pattern2.png');
   background-size: cover;
 }
