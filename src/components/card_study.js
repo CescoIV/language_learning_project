@@ -81,8 +81,8 @@ class CardStudy extends Component {
       <div className="App">
         <div className="nav_bar_bg">
           <nav className='nav_bar'>
-            <div onClick={this._flashCards}><p title="study flash cards"className='nav_button s'>S<span className='btn-spn'>tudy</span></p></div>
-            <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button q'>Q<span className='btn-spn'>uiz</span></p></div>
+            <div onClick={this._flashCards}><p title="study flash cards"className='nav_button'>S<span className='btn-spn'>tudy</span></p></div>
+            <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button'>Q<span className='btn-spn'>uiz</span></p></div>
             <div onClick={this._searchComp}><p title='Search words'className='nav_button'>S<span className='btn-spn'>earch</span></p></div>
           </nav>
         </div>

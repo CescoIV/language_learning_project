@@ -12,27 +12,25 @@ p{
 	color:white;
 }
 .btn-spn{
-	font-size: 10px;
+	font-size: 20px;
 }
 .nav_bar_bg{
 	position:fixed;
 	width:150px;
 	height:600px;
-	background-color: red;
-	background-image: url("https://thumb1.shutterstock.com/display_pic_with_logo/4192141/732393130/stock-vector-grilled-meat-and-vegetables-vertical-banner-collection-grill-bar-design-vector-illustration-732393130.jpg");
+	background-image: url("../images/navbar3.png");
 }
 .nav_bar{
 	position: fixed;
 	width:100px;
-	height:500px;
-	margin-top: 2.75%;
-	background-color: #ff4;
+	height:400px;
+	margin-top: 7%;
 }
 .nav_button{
 	color:black;
 	transition: color .2s linear;
 	margin: 40px;
-	font-size: 30px;
+	font-size: 40px;
 }
 .nav_button:hover{
 	color:red;
