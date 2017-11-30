@@ -25,9 +25,15 @@ class Card extends Component {
   }
   _editSol(){
     //formats the possible solutions
-    let ayy = this.props.sol.map((el) => el + ', ');
-    let l = ayy.length-1;
-    ayy[l] = ayy[l].slice(0, ayy[l].length-2)
+    let ayy = null;
+    if(this.props.sol.length>0){
+      ayy = this.props.sol.map((el) => el + ', ');
+      let l = ayy.length-1;
+      ayy[l] = ayy[l].slice(0, ayy[l].length-2)
+    }else{
+      ayy = 'no other translations found';
+    }
+
     return ayy;
   }
   render() {

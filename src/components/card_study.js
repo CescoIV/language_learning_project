@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from './card.js';
 import Quiz from './quiz.js';
 import Search from './search.js';
+import Post from './post.js';
 import axios from 'axios';
 import './card_study.css';
 
@@ -16,6 +17,7 @@ class CardStudy extends Component {
     this._quizGenerator = this._quizGenerator.bind(this);
     this._getData = this._getData.bind(this);
     this._searchComp = this._searchComp.bind(this);
+    this._postComp = this._postComp.bind(this);
   }
 
   //COMPONENTS
@@ -45,6 +47,17 @@ class CardStudy extends Component {
     this.setState({
       message: message,
       display: (<Search data={this.state.data}/>),
+    })
+  }
+  _postComp(){
+    let message = (
+      <div className='read'>
+        <h1>Try and Post a word!</h1><p>Please post a Nahuatl word with its english translation and possible translations.</p>
+      </div>);
+
+    this.setState({
+      message: message,
+      display: (<Post />),
     })
   }
   //-------------
@@ -82,6 +95,7 @@ class CardStudy extends Component {
             <div onClick={this._flashCards}><p title="study flash cards"className='nav_button'>S<span className='btn-spn'>tudy</span></p></div>
             <div onClick={this._quizGenerator}><p title="Quiz me!"className='nav_button'>Q<span className='btn-spn'>uiz</span></p></div>
             <div onClick={this._searchComp}><p title='Search words'className='nav_button'>S<span className='btn-spn'>earch</span></p></div>
+            <div onClick={this._postComp}><p title='Post a word'className='nav_button'>P<span className='btn-spn'>ost</span></p></div>
           </nav>
         </div>
         <div className='display'>{this.state.message}{this.state.display}</div>
