@@ -19,7 +19,6 @@ class Quiz extends Component {
     this._toggleStats = this._toggleStats.bind(this);
   }
   _pickFive(){
-    console.log('hi im pick5');;
     //shuffle every word in the dictionary
     let words = this.props.lang;
     words = this._shuffle(words);
@@ -27,19 +26,16 @@ class Quiz extends Component {
     let five = words.slice(0,5);
     //create quizcard components
     five = five.map((obj,idx) => (<QuizCard word={obj.word_native} def={obj.word_english} key={idx} count={this._count} sol={obj.correct_responses}/>));
-    console.log(five);
     this.setState({
       display: five
     })
   }
   _shuffle(words){
-    console.log(words, "preshuffle");
     for(let i in words){
       //get rndom index in word arr
       let idx = Math.floor(Math.random()*words.length);
       [words[i],words[idx]]=[words[idx],words[i]];
     }
-    console.log(words,'postshuffle');
     return words;
   }
   _count(){
@@ -106,7 +102,7 @@ class Quiz extends Component {
             this page.
           </p>
         </div>
-        <p>{this.state.correct}/5 correct</p>
+        <p className='correct-num'>{this.state.correct}/5 correct</p>
         {this.state.display}
         <div className="show-known">
           <button onClick={this._toggleStats}>Show me my known words</button>

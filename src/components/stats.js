@@ -10,14 +10,15 @@ class Stats extends Component {
       margin:'0px',
     }
     let string = [];
-    for(let word of this.props.known ){
-      word = word.toLowerCase();
-      word += ' ';
-      string.push((<p style={pstyle}>{word}</p>)); 
+    let arr= this.props.known
+    for(let word in arr){
+      arr[word] = arr[word].toLowerCase();
+      arr[word] += ' ';
+      string.push((<p style={pstyle} key={word}>{arr[word]}</p>)); 
     }                   
     return (
       <div className="App">
-        <p>{string}</p>
+        {string}
       </div>
     );
   }

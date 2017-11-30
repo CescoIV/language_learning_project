@@ -1,7 +1,14 @@
 form{
 	margin:0px;
 }
+p.solved{
+	color:#fff;
+}
+.correct-num{
+	color:#fff;
+}
 .word{
+	color: #fff;
 	margin: 10px;
 }
 .show-known{

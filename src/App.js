@@ -28,9 +28,9 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <img className='logo'src={require("./images/logo2.png")}/>
+          <img alt="nahuatl logo" className='logo'src={require("./images/logo2.png")}/>
           <span className='hed'>Created By: Francisco Ordaz IV</span>
-          <a href='https://www.github.com/CescoIV'><img className='github' src='https://azurelens.net/assets/logos/Git%20repository.png'/></a>
+          <a href='https://www.github.com/CescoIV'><img className='github' src='https://azurelens.net/assets/logos/Git%20repository.png' alt="github logo"/></a>
         </header>
         <div className='bottom'>
           {this.state.display}

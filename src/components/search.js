@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './search.css';
 
 class Search extends Component {
   constructor(props){
@@ -35,22 +36,29 @@ class Search extends Component {
     this._showWordInfo(found);
   }
   _showWordInfo(obj){
-    let resp = obj.correct_responses.map((el)=>{
-      if(el !== obj.correct_responses[obj.correct_responses.length-1]){
+
+    let stuff = 'nothing got set';
+    if(obj.correct_responses){
+      let temp= obj.correct_responses.map((el)=>{
+        if(el !== obj.correct_responses[obj.correct_responses.length-1]){
         el += ", "
       }
-      return el;
-    })
-    console.log(resp)
-    let stuff = (
-      <div>
-        <h3>Here is what I know about this word</h3>
-        <p>In Nahuatl, it is: <span>{obj.word_native}</span></p>
-        <p>It Translates to <span>{obj.word_english}</span> in English</p>
-        <p>Here are some possible translations:</p>
-        {resp}
-      </div>
-      )
+        return el;
+      })
+     stuff = (
+        <div>
+          <h3>Here is what I know about this word</h3>
+          <p className='info'>In Nahuatl, it is: <span className='span'>{obj.word_native}</span></p>
+          <p className='info'>It Translates to <span className='span'>{obj.word_english}</span> in English</p>
+          <p className='info'>Here are some possible translations:</p>
+          {temp}
+        </div>
+      );
+    }else{
+      stuff=(<p className='info'>I could not find that word!</p>
+      );
+     
+    }
     this.setState({
       display: stuff
     })

@@ -50,13 +50,11 @@ class CardStudy extends Component {
   //-------------
   //UTILITY
   _shuffle(words){
-    console.log(words, "preshuffle");
     for(let i in words){
       //get rndom index in word arr
       let idx = Math.floor(Math.random()*words.length);
       [words[i],words[idx]]=[words[idx],words[i]];
     }
-    console.log(words,'postshuffle');
     return words;
   }
 
