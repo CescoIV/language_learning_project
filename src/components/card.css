@@ -1,9 +1,10 @@
 .card-background{
 	position: relative;
-	background-color:white;
+	background-color:#F7CE91;
 	background-image: url('../images/card.png');
 	background-size: cover;
 	height: 350px;
+	margin: 10px;
 }
 .card-container{
 	position: absolute;
