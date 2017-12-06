@@ -44,6 +44,6 @@ img{
   height: 100%;
   text-align: center;
   background-attachment: fixed;
-  background-image: url('./images/pattern2.png');
+  background-image: url('./images/pattern.png');
   background-size: cover;
 }
