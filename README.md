@@ -1,6 +1,7 @@
 # What is this?
 The study Nahuatl app is a front-end interface for experimentation with the Nahuatl API.
 >https://github.com/CescoIV/nahuatl_api.
+
 Its main use is to provide an easy to use interface by which to study and manipulate the data
 in our server.
 
@@ -35,6 +36,6 @@ Want to contribute to our library of Nahuatl vocabulary?
 
 You can make a post request to our back end by filling in our required fields, keep in mind that this is an open API so please be responsible with the data you send us :)
 
-## Notes
+# Author Notes
 
 This is a WIP experimental API that is not curated, this is not meant to, nor pretends to be the final source or solution to studying the Nahuatl language. Its information at this point in progress may be inaccurate not only by the dialectical nature of Nahuatl, but also by the uncurated nature of our data. Study responsibly :)
